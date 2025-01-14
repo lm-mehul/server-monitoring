@@ -8,6 +8,8 @@ go get github.com/shirou/gopsutil
 
 go run main.go
 
+nohup go run main.go > output.log 2>&1 &
+
 
 The script above provides the functionality :
 
