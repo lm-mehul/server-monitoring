@@ -50,7 +50,7 @@ func startMonitoring(w http.ResponseWriter, r *http.Request) {
 		}
 		metricsData = append(metricsData, metrics)
 
-		time.Sleep(500 * time.Millisecond)
+		time.Sleep(250 * time.Millisecond)
 	}
 
 	mutex.Lock()
