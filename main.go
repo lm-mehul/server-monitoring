@@ -96,7 +96,7 @@ func main() {
 	http.HandleFunc("/cpu-metrics", cpuMetrics)
 
 	fmt.Println("Server is running on port 8080")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(":4200", nil); err != nil {
 		fmt.Println("Error starting server:", err)
 	}
 }
