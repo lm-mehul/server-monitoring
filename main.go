@@ -35,7 +35,7 @@ func startMonitoring(w http.ResponseWriter, r *http.Request) {
 
 	var metricsData []Metrics
 
-	for i := 0; i < 60; i++ {
+	for i := 0; i < 120; i++ {
 		cpuUsage, _ := cpu.Percent(0, false)
 		memory, _ := mem.VirtualMemory()
 		diskStats, _ := disk.IOCounters()
@@ -95,7 +95,7 @@ func main() {
 	http.HandleFunc("/start-monitoring", startMonitoring)
 	http.HandleFunc("/cpu-metrics", cpuMetrics)
 
-	fmt.Println("Server is running on port 8080")
+	fmt.Println("Server is running on port 4200")
 	if err := http.ListenAndServe(":4200", nil); err != nil {
 		fmt.Println("Error starting server:", err)
 	}
